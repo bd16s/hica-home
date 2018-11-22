@@ -45,3 +45,15 @@ Minified files will be generated under `hica-home-ui/build`. Please make sure ex
 Then start Express server, go to `hica-home-backend`, and run:
 
 	npm start
+
+# Reference
+- https://daveceddia.com/create-react-app-express-backend/
+- https://expressjs.com/en/starter/generator.html
+- https://daveceddia.com/deploy-react-express-app-heroku/
+- https://github.com/reduxjs/redux/blob/master/docs/advanced/UsageWithReactRouter.md
+- https://redux.js.org/advanced/middleware#the-final-approach
+- https://stackoverflow.com/questions/48992972/react-router-4-default-route-content-displays-on-all-other-components
+- https://tylermcginnis.com/react-router-nested-routes/
+- https://hashnode.com/post/10-best-reactjs-ui-frameworks-for-rapid-prototyping-cit49tqx414z89c53equ4zc5k
+- https://redux.js.org/basics/exampletodolist
+- https://daveceddia.com/context-api-vs-redux/
