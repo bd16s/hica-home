@@ -18,6 +18,18 @@ import * as FontAwesome from 'react-icons/fa'
 import * as Material from 'react-icons/md'
 import { withRouter } from 'react-router-dom'
 import './Header.css'
+import PropTypes from 'prop-types';
+
+const content = {
+    en: {
+        about: 'ABOUT',
+        mun: 'HITMUN2018'
+    },
+    zh: {
+        about: '关于',
+        mun: '模拟联合国2018'
+    }
+}
 
 class Header extends Component {
     constructor(props) {
@@ -25,8 +37,15 @@ class Header extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            activePath: '/'
         };
+
+        this.props.history.listen((location) => {
+            this.setState({
+                activePath: location.pathname
+            });
+        });
     }
 
     toggle() {
@@ -34,24 +53,30 @@ class Header extends Component {
             isOpen: !this.state.isOpen
         });
     }
+
     selectLanguage = lang => {
         this.props.setLanguage(lang);
     }
+
     navigateTo = path => {
         this.props.history.push(path);
     }
 
     // Use ISO639-1 code for languages
     render() {
+        const text = content[this.props.language];
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color='light' light expand="md">
                     <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')}>HICA</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink className='clickable' onClick={() => this.navigateTo('/mun')}>HITMUN2018</NavLink>
+                            <NavItem active={this.state.activePath === '/mun'}>
+                                <NavLink className='clickable' onClick={() => this.navigateTo('/mun')}>{text.mun}</NavLink>
+                            </NavItem>
+                            <NavItem active={this.state.activePath === '/about'}>
+                                <NavLink className='clickable' onClick={() => this.navigateTo('/about')}>{text.about}</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink className='clickable' onClick={() => window.open("https://github.com/bd16s/hica-home", "_blank")}><FontAwesome.FaGithub /></NavLink>
@@ -73,7 +98,13 @@ class Header extends Component {
     }
 }
 
+Header.propTypes = {
+    language: PropTypes.string,
+    history: PropTypes.object
+};
+
 const mapStateToProps = state => ({
+    language: state.header.language
 })
 
 const mapDispatchToProps = dispatch => ({

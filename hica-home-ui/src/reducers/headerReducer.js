@@ -2,15 +2,13 @@ const initialState = {
     language: "en"
 };
 
-const todos = (state = initialState, action) => {
+const headerReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_LANGUAGE':
-            state.language = action.language
-            break;
+            return { ...state, language: action.language };
         default:
-            break;
+            return state;
     }
-    return state;
 }
 
-export default todos
+export default headerReducer
