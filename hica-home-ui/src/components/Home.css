@@ -1,0 +1,39 @@
+.carousel-inner .carousel-item {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    background-color: black;
+}
+
+.carousel-inner .carousel-item:first-of-type {
+    position: relative;
+}
+
+.carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-caption {
+    top: 40vh;
+    bottom: auto;
+    text-align: left;
+}
+
+.carousel-caption > h3 {
+    font-size: 40px;
+}
+
+.carousel-caption > p {
+    font-size: 20px;
+}
+
+.hica-home-carousel-image {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.6;
+}

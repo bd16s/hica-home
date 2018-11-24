@@ -1,4 +1,7 @@
 ﻿import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
 import {
     Collapse,
     Navbar,
@@ -12,24 +15,11 @@ import {
     DropdownMenu,
     DropdownItem
 } from 'reactstrap';
-import { connect } from 'react-redux'
 import { setLanguage } from '../actions'
 import * as FontAwesome from 'react-icons/fa'
 import * as Material from 'react-icons/md'
-import { withRouter } from 'react-router-dom'
 import './Header.css'
-import PropTypes from 'prop-types';
-
-const content = {
-    en: {
-        about: 'ABOUT',
-        mun: 'HITMUN2018'
-    },
-    zh: {
-        about: '关于',
-        mun: '模拟联合国2018'
-    }
-}
+import Profile from './Header.json';
 
 class Header extends Component {
     constructor(props) {
@@ -63,23 +53,24 @@ class Header extends Component {
     }
 
     // Use ISO639-1 code for languages
+    // #53245C purple
+    // #FB9E45 orange
     render() {
-        const text = content[this.props.language];
+        const text = Profile[this.props.language];
         return (
             <div>
-                <Navbar color='light' light expand="md">
-                    <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')}>HICA</NavbarBrand>
+                <Navbar style={{ backgroundColor: '#53245C', opacity: '0.9' }} dark expand='md' fixed='top'>
+                    <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')} style={{ color: '#FB9E45' }}>
+                        <img src={require('../assets/images/logo-hica-white.png')} height='40px' alt={'HICA'} />
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav className='ml-auto' navbar>
                             <NavItem active={this.state.activePath === '/mun'}>
                                 <NavLink className='clickable' onClick={() => this.navigateTo('/mun')}>{text.mun}</NavLink>
                             </NavItem>
-                            <NavItem active={this.state.activePath === '/about'}>
-                                <NavLink className='clickable' onClick={() => this.navigateTo('/about')}>{text.about}</NavLink>
-                            </NavItem>
                             <NavItem>
-                                <NavLink className='clickable' onClick={() => window.open("https://github.com/bd16s/hica-home", "_blank")}><FontAwesome.FaGithub /></NavLink>
+                                <NavLink className='clickable' onClick={() => window.open('https://github.com/bd16s/hica-home', '_blank')}><FontAwesome.FaGithub /></NavLink>
                             </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
