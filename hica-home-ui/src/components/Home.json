@@ -1,10 +1,10 @@
 ﻿{
   "en": {
-    "un-hall": {
-      "caption": "HITMUN 2018",
-      "text": "Looking For Solutions for Our Planet"
+    "hica-beach": {
+      "caption": "HICA",
+      "text": "HIT International Communication Association"
     },
-    "panel-discussion": {
+    "un-hall": {
       "caption": "HITMUN 2018",
       "text": "Looking For Solutions for Our Planet"
     },
@@ -14,11 +14,11 @@
     }
   },
   "zh": {
-    "un-hall": {
-      "caption": "哈工大模拟联合国 2018",
-      "text": "运筹帷幄之中，决胜千里之外"
+    "hica-beach": {
+      "caption": "HICA",
+      "text": "哈尔滨工业大学国际交流协会"
     },
-    "panel-discussion": {
+    "un-hall": {
       "caption": "哈工大模拟联合国 2018",
       "text": "运筹帷幄之中，决胜千里之外"
     },

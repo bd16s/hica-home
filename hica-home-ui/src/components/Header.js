@@ -59,9 +59,9 @@ class Header extends Component {
         const text = Profile[this.props.language];
         return (
             <div>
-                <Navbar style={{ backgroundColor: '#53245C', opacity: '0.9' }} dark expand='md' fixed='top'>
+                <Navbar style={{ backgroundColor: '#53245C' }} dark expand='md' fixed='top'>
                     <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')} style={{ color: '#FB9E45' }}>
-                        <img src={require('../assets/images/logo-hica-white.png')} height='40px' alt={'HICA'} />
+                        <img src={require('../assets/images/logo-hica-white.png')} height='32px' alt={'HICA'} />
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

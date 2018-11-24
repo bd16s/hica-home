@@ -1,0 +1,27 @@
+body {
+    background-color: ghostwhite;
+}
+
+.light-text {
+    color: white;
+}
+
+.jumbotron-divider {
+    border-top: 1px solid white;
+}
+
+.footer-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.vl {
+    border-left: 1px solid grey;
+    height: 428.4px;
+    position: absolute;
+    left: 50%;
+}
+
+.sub-section {
+    padding-top: 80px;
+}

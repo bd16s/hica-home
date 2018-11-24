@@ -1,7 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
     Carousel,
     CarouselItem,
@@ -10,23 +10,26 @@ import {
     CarouselCaption
 } from 'reactstrap';
 import './Home.css';
-import Profile from './Home.json';
+import Profile from './Home.json'
 
 const carouselItems = [
     {
-        src: require('../assets/images/bg-un-hall.jpg'),
+        src: require('../assets/images/bg-hica-beach.jpg'),
         altText: 'HITMUN 2018',
-        key: 'un-hall'
+        key: 'hica-beach',
+        link: '/'
     },
     {
-        src: require('../assets/images/bg-panel-discussion.jpg'),
+        src: require('../assets/images/bg-un-hall.jpg'),
         altText: 'HITMUN 2018',
-        key: 'panel-discussion'
+        key: 'un-hall',
+        link: '/mun'
     },
     {
         src: require('../assets/images/bg-model-un.jpg'),
         altText: 'HITMUN 2018',
-        key: 'model-un'
+        key: 'model-un',
+        link: '/mun'
     }
 ]
 
@@ -67,7 +70,10 @@ class Home extends Component {
     }
 
     onImageClick = () => {
-        this.props.history.push('/mun');
+        const link = carouselItems[this.state.activeIndex].link
+        if ('/' !== link) {
+            this.props.history.push(link)
+        }
     }
 
     render() {
