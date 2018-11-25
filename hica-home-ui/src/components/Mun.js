@@ -1,7 +1,20 @@
 ﻿import React, { Component } from 'react';
-import { Jumbotron, Button, Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
-import './Mun.css';
+import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import {
+    Jumbotron,
+    Button,
+    Container,
+    Row,
+    Col,
+    Form,
+    FormGroup,
+    Label,
+    Input
+} from 'reactstrap';
+import './Mun.css';
+import Profile from './Mun.json';
 
 class Mun extends Component {
     constructor(props) {
@@ -10,8 +23,7 @@ class Mun extends Component {
         console.log(this.myRef);
     }
 
-    onClick2 = () => {
-        console.log(this.myRef.current.offsetTop);
+    scrollToRegistration = () => {
         window.scrollTo({
             top: this.myRef.current.offsetTop,
             behavior: "smooth"
@@ -23,23 +35,19 @@ class Mun extends Component {
     }
 
     render() {
+        const text = Profile[this.props.language];
         return (
             <div style={{ marginTop: '60.2px' }}>
                 <Jumbotron fluid style={{ backgroundColor: '#53245C'}}>
                     <Container>
                         <Row>
                             <Col sm='12' md='8'>
-                                <h1 className="display-3 light-text">Welcome to HITMUN!</h1>
-                                <p className="lead light-text">
-                                    With extensive exercise in research, public speaking, and teamwork, Model UN helps you build confidence, leadership and diplomatic skills. 
-                          It is your chance to dream, travel, meet friends and gain lifetime experiences through HITMUN.
-                                </p>
+                                <h1 className="display-3 light-text">{text.jumbo.title}</h1>
+                                <p className="lead light-text">{text.jumbo.intro}</p>
                                 <hr className="my-2 jumbotron-divider" />
-                                <p className='light-text'>
-                                    Harbin Institute of Technoloty Model United Nations
-                                </p>
+                                <p className='light-text'>{text.jumbo.intro2}</p>
                                 <p className="lead">
-                                    <Button color="primary" onClick={this.onClick2}>Register Now</Button>
+                                    <Button color="primary" onClick={this.scrollToRegistration}>{text.jumbo.button}</Button>
                                 </p>
                             </Col>
                             <Col md='4' className='d-none d-sm-none d-md-block'>
@@ -53,46 +61,34 @@ class Mun extends Component {
                     <Form>
                         <Row form>
                             <Col sm='12' md='4' className='sub-section'>
-                                <h2>Registration</h2>
+                                <h2>{text.registration.title}</h2>
                                 <FormGroup>
-                                    <Label for="name">Name</Label>
-                                    <Input type="text" name="name" id="name" />
+                                    <Label for="name">{text.registration.name}</Label>
+                                    <Input type="text" name="name" id="name" disabled />
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="studentId">Student ID #</Label>
-                                    <Input type="text" name="studentId" id="studentId" />
+                                    <Label for="studentId">{text.registration.studentId}</Label>
+                                    <Input type="text" name="studentId" id="studentId" disabled />
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="phone">Phone #</Label>
-                                    <Input type="text" name="phone" id="phone"/>
+                                    <Label for="phone">{text.registration.phone}</Label>
+                                    <Input type="text" name="phone" id="phone" disabled />
                                 </FormGroup>
                                 <FormGroup>
-                                    <Label for="emailAddress">Email</Label>
-                                    <Input type="email" name="emailAddress" id="emailAddress" />
+                                    <Label for="emailAddress">{text.registration.email}</Label>
+                                    <Input type="email" name="emailAddress" id="emailAddress" disabled />
                                 </FormGroup>
-                                <Button onClick={this.onFormSubmit}>Submit</Button>
+                                <Button onClick={this.onFormSubmit} disabled>{text.registration.submit}</Button>
                             </Col>
                             <Col md='1' className='sub-section d-none d-sm-none d-md-block'>
                                 <div className="vl"></div>
                             </Col>
                             <Col sm='12' md='7' className='sub-section'>
-                                <h2>What is MUN?</h2>
-                                <p>
-                                    Model United Nations, also known as Model UN or MUN, is an educational simulation and/or academic activity in which students can learn about diplomacy, international relations, and the United Nations. 
-                                    MUN involves and teaches participants speaking, debating, and writing skills, in addition to critical thinking, teamwork, and leadership abilities.
-                                    Usually an extracurricular activity, some schools also offer Model UN as a class. 
-                                    It is meant to engage students and allow them to develop deeper understanding into current world issues.
-                                </p>
-                                <p>
-                                    Participants in Model United Nations conferences, known as delegates, are placed in committees and assigned countries to represent, or occasionally other organizations or political figures, where they represent members of that body. 
-                                    They are presented with their assignments in advance, along with a topic or topics that their committee will discuss. 
-                                    Delegates conduct research before conferences and formulate positions that they will then debate with their fellow delegates in the committee, staying true to the actual position of the member they represent. 
-                                    At the end of a conference, the best-performing delegates in each committee, as well as delegations, are sometimes recognized with awards.
-                                </p>
-                                <h2>HITMUN</h2>
-                                <p>
-                                    MUN was brought into Harbin Institute of Technology since 2009.
-                                </p>
+                                <h2>{text.munIntro.title}</h2>
+                                <p>{text.munIntro.p1}</p>
+                                <p>{text.munIntro.p2}</p>
+                                <h2>{text.hitmunIntro.title}</h2>
+                                <p>{text.hitmunIntro.p1}</p>
                             </Col>
                         </Row>
                     </Form>
@@ -108,4 +104,19 @@ class Mun extends Component {
     }
 }
 
-export default withRouter(Mun);
+Mun.propTypes = {
+    language: PropTypes.string
+};
+
+const mapStateToProps = state => ({
+    language: state.header.language
+})
+
+const mapDispatchToProps = dispatch => ({
+
+})
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withRouter(Mun))

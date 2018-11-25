@@ -1,0 +1,52 @@
+﻿{
+  "en": {
+    "jumbo": {
+      "title": "Welcome to HITMUN!",
+      "intro": "With extensive exercise in research, public speaking, and teamwork, Model UN helps you build confidence, leadership and diplomatic skills. It is your chance to dream, travel, meet friends and gain lifetime experiences through HITMUN.",
+      "intro2": "Harbin Institute of Technoloty Model United Nations 2018",
+      "button": "Register Now"
+    },
+    "registration": {
+      "title": "Registration (Not Open)",
+      "name": "Name",
+      "studentId": "Student ID #",
+      "phone": "Phone #",
+      "email": "Email",
+      "submit": "Submit"
+    },
+    "munIntro": {
+      "title": "What is MUN?",
+      "p1": "Model United Nations, also known as Model UN or MUN, is an educational simulation and/or academic activity in which students can learn about diplomacy, international relations, and the United Nations. MUN involves and teaches participants speaking, debating, and writing skills, in addition to critical thinking, teamwork, and leadership abilities. Usually an extracurricular activity, some schools also offer Model UN as a class. It is meant to engage students and allow them to develop deeper understanding into current world issues.",
+      "p2": "Participants in Model United Nations conferences, known as delegates, are placed in committees and assigned countries to represent, or occasionally other organizations or political figures, where they represent members of that body. They are presented with their assignments in advance, along with a topic or topics that their committee will discuss. Delegates conduct research before conferences and formulate positions that they will then debate with their fellow delegates in the committee, staying true to the actual position of the member they represent. At the end of a conference, the best-performing delegates in each committee, as well as delegations, are sometimes recognized with awards."
+    },
+    "hitmunIntro": {
+      "title": "HITMUN",
+      "p1": "MUN was brought into Harbin Institute of Technology since 2009."
+    }
+  },
+  "zh": {
+    "jumbo": {
+      "title": "欢迎来到哈工大模联!",
+      "intro": "像联合国大使一样进行团队研究和演讲，模拟联合国活动会帮助你增强自信、领导力和外交能力。在哈工大模拟联合国，你将得到最难忘的回忆，也将让世界听到自己的梦想。",
+      "intro2": "哈工大国际交流协会重磅推出——哈尔滨工业大学模拟联合国 2018",
+      "button": "立即注册"
+    },
+    "registration": {
+      "title": "注册（未开放）",
+      "name": "姓名",
+      "studentId": "学号",
+      "phone": "联系电话",
+      "email": "电子邮件",
+      "submit": "提交"
+    },
+    "munIntro": {
+      "title": "什么是模联？",
+      "p1": "模拟联合国（Model United Nations，MUN）是一种学术性质活动，藉仿效精简后的联合国议规举行模拟会议，使与会者了解多边外交的过程，培养分析公民议题的能力，促进世界各地学生的交流，增进演讲和辩论能力，提高组织、策划、管理、研究和写作、解决冲突、求同存异的能力，训练批判性思考、团队精神和领导才能，同时认识不同文化，拓展国际视野，了解各国在历史上或现实中的立场与处境。模拟联合国活动广泛开展于世界各地的中学生和大学生间，每年全球都会举办数十场国际性的模拟联合国会议，参与人数超过四百万人。",
+      "p2": "在会议当中，每个国家均可以派出一定数量的代表参加会议，并尝试在会议中将扮演世界各国外交官，在搜集资料后依现实或虚构的国际状况来模拟进行联合国中的各种会议，按照类似联合国会议的规则和程序进行发言、游说、辩论、谈判，国家集团间达成共识，产生决议草案，并按照联合国的表决程序进行投票从而形成决议。因此，参与者需要在会前的 4 到 9 个月里对所代表国家的国情、外交政策和会间将讨论的议题进行深入研究和充分准备，并完成立场文件的写作，同时出席所有正式会议前的工作会议。"
+    },
+    "hitmunIntro": {
+      "title": "哈工大模联",
+      "p1": "首届哈工大模拟联合国（Harbint Institute of Technology Model United Nations，HITMUN）是 2009 年由 HICA 举办的。"
+    }
+  }
+}
