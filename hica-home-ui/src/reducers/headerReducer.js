@@ -1,5 +1,5 @@
 const initialState = {
-    language: "en"
+    language: "zh"
 };
 
 const headerReducer = (state = initialState, action) => {
