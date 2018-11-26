@@ -13,10 +13,10 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem
+    DropdownItem,
+    Alert
 } from 'reactstrap';
-import { setLanguage } from '../actions'
-import * as FontAwesome from 'react-icons/fa'
+import { setLanguage, setAlert } from '../actions'
 import * as Material from 'react-icons/md'
 import './Header.css'
 import Profile from './Header.json';
@@ -28,10 +28,12 @@ class Header extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            activePath: '/'
+            activePath: '/',
+            isAlertOpen: true
         };
 
         this.props.history.listen((location) => {
+            this.props.setAlert({isOpen: false})
             this.setState({
                 activePath: location.pathname
             });
@@ -52,6 +54,10 @@ class Header extends Component {
         this.props.history.push(path);
     }
 
+    onAlertDismiss = () => {
+        this.props.setAlert({isOpen: false})
+    }
+
     // Use ISO639-1 code for languages
     // #53245C purple
     // #FB9E45 orange
@@ -69,9 +75,6 @@ class Header extends Component {
                             <NavItem active={this.state.activePath === '/mun'}>
                                 <NavLink className='clickable' onClick={() => this.navigateTo('/mun')}>{text.mun}</NavLink>
                             </NavItem>
-                            <NavItem>
-                                <NavLink className='clickable' onClick={() => window.open('https://github.com/bd16s/hica-home', '_blank')}><FontAwesome.FaGithub /></NavLink>
-                            </NavItem>
                             <UncontrolledDropdown nav inNavbar>
                                 <DropdownToggle nav caret>
                                     <Material.MdLanguage />
@@ -84,22 +87,30 @@ class Header extends Component {
                         </Nav>
                     </Collapse>
                 </Navbar>
+                <div className='alert-fixed'>
+                    <Alert color={this.props.alert.color} isOpen={this.props.alert.isOpen} toggle={this.onAlertDismiss}>
+                        {this.props.alert.message}
+                    </Alert>
+                </div>
             </div>
         );
     }
 }
 
 Header.propTypes = {
+    history: PropTypes.object,
     language: PropTypes.string,
-    history: PropTypes.object
+    alert: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-    language: state.header.language
+    language: state.header.language,
+    alert: state.header.alert
 })
 
 const mapDispatchToProps = dispatch => ({
-    setLanguage: language => dispatch(setLanguage(language))
+    setLanguage: language => dispatch(setLanguage(language)),
+    setAlert: alert => dispatch(setAlert(alert))
 })
 
 export default connect(

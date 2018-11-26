@@ -10,9 +10,11 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-icons": "^3.2.2",
+    "react-loading": "^2.0.3",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
+    "react-svg-inline": "^2.1.1",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1"
   },
@@ -31,7 +33,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "http://localhost:3030",
+  "proxy": "http://localhost:80",
   "devDependencies": {
     "react-devtools": "^3.4.3",
     "redux-devtools": "^3.4.2"
