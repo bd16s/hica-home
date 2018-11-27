@@ -4,9 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+// var indexRouter = require('./routes/index');
 var captchaRouter = require('./routes/captcha');
-var registerRouter = require('./routes/register');
+var submitRouter = require('./routes/submit');
 
 var app = express();
 
@@ -21,9 +21,12 @@ app.use(cookieParser());
 const subDir = path.join('public', 'build');
 app.use(express.static(path.join(__dirname, subDir)));
 
-app.use('/', indexRouter);
-app.use('/captcha', captchaRouter);
-app.use('/register', registerRouter);
+// app.use('/', indexRouter);
+app.use('/api/captcha', captchaRouter);
+app.use('/api/submit', submitRouter);
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, subDir, 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

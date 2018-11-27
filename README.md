@@ -38,13 +38,23 @@ To compile React, go to `hica-home-ui` and run:
 
 	npm run build
 
-Minified files will be generated under `hica-home-ui/build`. Please make sure express hosts static files from this folder.
+Minified files will be generated under `hica-home-ui/build`. Please copy the entire folder to hica-home-backend/public.
 
-	app.use(express.static('.../hica-home-ui/build'));
+	app.use(express.static('.../hica-home-backend/public/build'));
 
 Then start Express server, go to `hica-home-backend`, and run:
 
 	npm start
+
+#Roudmap
+##### Stage I
+- Update variable names for MUN form
+- Clean code, break down Mun component, and externalize variables
+
+##### Stage II
+- QR code and contacts
+- Events intro page
+- Departments intro page
 
 # Reference
 - https://daveceddia.com/create-react-app-express-backend/

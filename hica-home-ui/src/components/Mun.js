@@ -41,7 +41,7 @@ class Mun extends Component {
     }
 
     fetchCaptcha = () => {
-        fetch('/captcha')
+        fetch('/api/captcha')
             .then(resp => resp.json())
             .then(json => {
                 this.setState({ captcha: json })
@@ -67,7 +67,7 @@ class Mun extends Component {
             formDisabled: true
         })
 
-        fetch('/register', {
+        fetch('/api/submit', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

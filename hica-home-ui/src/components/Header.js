@@ -24,11 +24,11 @@ import Profile from './Header.json';
 class Header extends Component {
     constructor(props) {
         super(props);
-
+        
         this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            activePath: '/',
+            activePath: this.props.history.location.pathname,
             isAlertOpen: true
         };
 
