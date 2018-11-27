@@ -60,7 +60,7 @@ class Mun extends Component {
                 <Container style={{ paddingBottom: '80px' }}>
                     <Row form>
                         <Col sm='12' md='4' className='sub-section'>
-                            <h2>{text.registration.title}</h2>
+                            <h2 style={{ paddingBottom: '16px' }}>{text.registration.title}</h2>
                             <Form />
                         </Col>
                         <Col md='1' className='sub-section d-none d-sm-none d-md-block'>

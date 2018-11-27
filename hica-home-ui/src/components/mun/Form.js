@@ -1,4 +1,4 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
@@ -8,15 +8,15 @@ import {
     FormGroup,
     Label,
     Input
-} from 'reactstrap';
+} from 'reactstrap'
 import SVGInline from 'react-svg-inline'
 import ReactLoading from 'react-loading'
 
 import { setAlert } from '../../actions'
 import Config from '../../config.json'
 
-import Profile from './Form.json';
-import './Form.css';
+import Profile from './Form.json'
+import './Form.css'
 
 class ContactForm extends Component {
     constructor(props) {
@@ -43,6 +43,7 @@ class ContactForm extends Component {
             .then(json => {
                 this.setState({ captcha: json })
             })
+            .catch(e => console.error(e))
     }
 
     onCaptchaClick = () => {
@@ -51,7 +52,7 @@ class ContactForm extends Component {
     }
 
     onFormSubmit = () => {
-        const text = Profile[this.props.language];
+        const text = Profile[this.props.language]
 
         this.setState({
             formDisabled: true
@@ -93,6 +94,14 @@ class ContactForm extends Component {
                     })
                 }
             })
+            .catch(e => {
+                console.error(e)
+                this.props.setAlert({ isOpen: true, color: 'danger', message: text.alert.failed })
+                this.setState({
+                    formDisabled: false,
+                    formValueCaptcha: ''
+                })
+            })
     }
 
     onFormKeyDown = (event) => {
@@ -132,7 +141,7 @@ class ContactForm extends Component {
     }
 
     render() {
-        const text = Profile[this.props.language];
+        const text = Profile[this.props.language]
 
         return (
             <Form>

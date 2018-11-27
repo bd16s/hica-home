@@ -47,11 +47,13 @@ To run server as a daemon process, please install `forever`. Then under `hica-ho
 	sudo forever start bin/www
 
 
-#Roudmap
+## Roudmap
 ##### Stage I
 - QR code and contacts
+- Form validation
 - Events intro page
 - Departments intro page
+- Tests
 
 ##### Stage II
 - Add BBS (NodeBB)
@@ -68,3 +70,7 @@ To run server as a daemon process, please install `forever`. Then under `hica-ho
 - https://hashnode.com/post/10-best-reactjs-ui-frameworks-for-rapid-prototyping-cit49tqx414z89c53equ4zc5k
 - https://redux.js.org/basics/exampletodolist
 - https://daveceddia.com/context-api-vs-redux/
+
+
+## Issues
+- https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/5207690/
