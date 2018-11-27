@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 // import App from './App'
 import Header from './components/Header'
 import Home from './components/Home'
-import Mun from './components/Mun'
+import Mun from './components/mun/Mun'
 
 const Root = ({ store }) => (
     <Provider store={store}>

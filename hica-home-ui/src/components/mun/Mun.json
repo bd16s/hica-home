@@ -7,13 +7,7 @@
       "button": "Contact Us"
     },
     "registration": {
-      "title": "Contact Us",
-      "name": "Name",
-      "studentId": "School",
-      "phone": "Contact",
-      "email": "Notes",
-      "captcha": "Please enter the code below",
-      "submit": "Submit"
+      "title": "Contact Us"
     },
     "munIntro": {
       "title": "What is MUN?",
@@ -23,13 +17,6 @@
     "hitmunIntro": {
       "title": "HITMUN",
       "p1": "MUN was brought into Harbin Institute of Technology since 2009."
-    },
-    "more": {
-      "title":  "Want More?"
-    },
-    "alert": {
-      "success": "Registered Successfully!",
-      "failed": "Failed to register, please try again."
     }
   },
   "zh": {
@@ -40,13 +27,7 @@
       "button": "联系我们"
     },
     "registration": {
-      "title": "联系我们",
-      "name": "姓名",
-      "studentId": "学校",
-      "phone": "联系方式",
-      "email": "留言",
-      "captcha": "验证码",
-      "submit": "提交"
+      "title": "联系我们"
     },
     "munIntro": {
       "title": "什么是模联？",
@@ -56,13 +37,6 @@
     "hitmunIntro": {
       "title": "哈工大模联",
       "p1": "首届哈工大模拟联合国（Harbint Institute of Technology Model United Nations，HITMUN）是 2009 年由 HICA 举办的。"
-    },
-    "more": {
-      "title": "更多信息"
-    },
-    "alert": {
-      "success": "信息录入成功！",
-      "failed": "信息录入失败，请重试。"
     }
   }
 }

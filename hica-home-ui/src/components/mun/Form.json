@@ -1,0 +1,30 @@
+﻿{
+  "en": {
+    "registration": {
+      "name": "Name",
+      "school": "School",
+      "contact": "Contact",
+      "notes": "Notes",
+      "captcha": "Please enter the code below",
+      "submit": "Submit"
+    },
+    "alert": {
+      "success": "Registered Successfully!",
+      "failed": "Failed to register, please try again."
+    }
+  },
+  "zh": {
+    "registration": {
+      "name": "姓名",
+      "school": "学校",
+      "contact": "联系方式",
+      "notes": "留言",
+      "captcha": "验证码",
+      "submit": "提交"
+    },
+    "alert": {
+      "success": "信息录入成功！",
+      "failed": "信息录入失败，请重试。"
+    }
+  }
+}
