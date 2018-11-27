@@ -1,5 +1,6 @@
 # hica-home
 
+
 ## Architecture
 ##### backend:
 
@@ -13,6 +14,7 @@ generated from create-react-app
 
 https://github.com/facebook/create-react-app
 
+
 ## Run
 Please run `npm install` for both `hica-home-ui` and `hica-home-backend` module to install dependencies.
 
@@ -20,15 +22,13 @@ Please run `npm install` for both `hica-home-ui` and `hica-home-backend` module 
 
 Both frontend and backend server need to be started, so that React UI can hot reload.
 
-To start React UI server, go to `hica-home-ui`, and run:
+To start React UI server on port 3000, go to `hica-home-ui`, and run:
 
 	npm start
 
-
-To start Express server, go to `hica-home-backend`, and run:
+To start Express server on port 80, go to `hica-home-backend`, and run:
 
 	npm start
-
 
 ##### prod:
 
@@ -38,23 +38,24 @@ To compile React, go to `hica-home-ui` and run:
 
 	npm run build
 
-Minified files will be generated under `hica-home-ui/build`. Please copy the entire folder to hica-home-backend/public.
-
-	app.use(express.static('.../hica-home-backend/public/build'));
-
-Then start Express server, go to `hica-home-backend`, and run:
+Minified files will be generated under `hica-home-ui/build`. Please copy the entire folder to `hica-home-backend/public`, and then start Express server by going to `hica-home-backend`, and run:
 
 	npm start
+	
+To run server as a daemon process, please install `forever`. Then under `hica-home-backend`, run:
+
+	sudo forever start bin/www
+
 
 #Roudmap
 ##### Stage I
-- Update variable names for MUN form
-- Clean code, break down Mun component, and externalize variables
-
-##### Stage II
 - QR code and contacts
 - Events intro page
 - Departments intro page
+
+##### Stage II
+- Add BBS (NodeBB)
+
 
 # Reference
 - https://daveceddia.com/create-react-app-express-backend/
