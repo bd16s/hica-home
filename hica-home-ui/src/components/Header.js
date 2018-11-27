@@ -1,7 +1,7 @@
-﻿import React, { Component } from 'react';
+﻿import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 import {
     Collapse,
     Navbar,
@@ -16,10 +16,16 @@ import {
     DropdownItem,
     Alert
 } from 'reactstrap';
-import { setLanguage, setAlert } from '../actions'
 import * as Material from 'react-icons/md'
+
+import { setLanguage, setAlert } from '../actions'
+
+import Config from '../config.json'
+
+import Profile from './Header.json'
 import './Header.css'
-import Profile from './Header.json';
+
+const hicaLogo = require('../assets/images/logo-hica-white.png')
 
 class Header extends Component {
     constructor(props) {
@@ -38,6 +44,10 @@ class Header extends Component {
                 activePath: location.pathname
             });
         });
+    }
+
+    componentDidMount() {
+        document.title = 'HICA'
     }
 
     toggle() {
@@ -65,9 +75,9 @@ class Header extends Component {
         const text = Profile[this.props.language];
         return (
             <div>
-                <Navbar style={{ backgroundColor: '#53245C' }} dark expand='md' fixed='top'>
-                    <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')} style={{ color: '#FB9E45' }}>
-                        <img src={require('../assets/images/logo-hica-white.png')} height='32px' alt={'HICA'} />
+                <Navbar style={{ backgroundColor: Config.color.primary }} dark expand='md' fixed='top'>
+                    <NavbarBrand className='clickable' onClick={() => this.navigateTo('/')}>
+                        <img src={hicaLogo} height='32px' alt={'HICA'} />
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>

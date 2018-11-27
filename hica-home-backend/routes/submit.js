@@ -19,7 +19,7 @@ router.post("/", function (req, res) {
     const match = token === json.captchaSecret
 
     if (match) {
-        const logString = '[' + json.name + ',' + json.id + ',' + json.phone + ',' + json.email + ']'
+        const logString = '[name: ' + json.name + ', school: ' + json.school + ', contact: ' + json.contact + ', notes: ' + json.notes + ']'
         logger.info(logString)
     }
 
