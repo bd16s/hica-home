@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     });
 
     const jsonResponse = {
-        secret: "" + CryptoJS.HmacSHA256(captcha.text, "<key_placeholder>").words[0],
+        secret: "" + CryptoJS.HmacSHA256(captcha.text.toLowerCase(), "<key_placeholder>").words[0],
         svg: captcha.data
     }
     res.status(200).json(jsonResponse);

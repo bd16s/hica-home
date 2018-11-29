@@ -164,7 +164,9 @@ class ContactForm extends Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for="captcha">{text.registration.captcha}</Label>
-                    <Input type="text" name="captcha" id="captcha" value={this.state.formValueCaptcha} onChange={this.onCaptchaInputChange} disabled={this.state.formDisabled} onKeyDown={this.onFormKeyDown} />
+                    <Input type="text" name="captcha" id="captcha" disabled={this.state.formDisabled}
+                        onChange={this.onCaptchaInputChange} onKeyDown={this.onFormKeyDown}
+                        value={this.state.formValueCaptcha} placeholder={text.registration.ignoreCase} />
                     <div style={{ paddingTop: '16px' }}>
                         {!this.state.captcha.svg &&
                             <div style={{ paddingTop: '10px', paddingBottom: '10px' }}>

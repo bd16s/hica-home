@@ -15,7 +15,7 @@ router.post("/", function (req, res) {
     const json = req.body
     console.log(json)
     
-    const token = "" + CryptoJS.HmacSHA256(json.captchaInput, "<key_placeholder>").words[0]
+    const token = "" + CryptoJS.HmacSHA256(json.captchaInput.toLowerCase(), "<key_placeholder>").words[0]
     const match = token === json.captchaSecret
 
     if (match) {

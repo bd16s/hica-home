@@ -6,6 +6,7 @@
       "contact": "Contact",
       "notes": "Notes",
       "captcha": "Please enter the code below",
+      "ignoreCase": "Ignore case",
       "captchaTip": "Click to change",
       "submit": "Submit"
     },
@@ -21,6 +22,7 @@
       "contact": "联系方式",
       "notes": "留言",
       "captcha": "验证码",
+      "ignoreCase":  "不区分大小写",
       "captchaTip":  "点击更换",
       "submit": "提交"
     },
