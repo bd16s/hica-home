@@ -37,7 +37,7 @@ class Mun extends Component {
         const text = Profile[this.props.language];
 
         return (
-            <div style={{ marginTop: '60.2px' }}>
+            <div style={{ marginTop: '61.6px' }}>
                 <Jumbotron fluid style={{ backgroundColor: Config.color.primary}}>
                     <Container>
                         <Row>
@@ -72,9 +72,14 @@ class Mun extends Component {
                             <p>{text.munIntro.p2}</p>
                             <h2>{text.hitmunIntro.title}</h2>
                             <p>{text.hitmunIntro.p1}</p>
-                            <p onClick={() => window.open('http://today.hit.edu.cn/article/2018/11/23/61588', '_blank')} style={{ cursor: 'pointer', color: Config.color.primary }}>
-                                今日哈工新闻：大第十一届哈尔滨工业大学模拟联合国大会冬季会代表招募
-                            </p>
+                            <ul>
+                                <li>
+                                    <a href='/mun' onClick={(e) => {
+                                        window.open('http://today.hit.edu.cn/article/2018/11/23/61588', '_blank')
+                                        e.preventDefault()
+                                    }}>今日哈工大新闻：第十一届哈尔滨工业大学模拟联合国大会冬季会代表招募</a>
+                                </li>
+                            </ul> 
                         </Col>
                     </Row>
                 </Container>

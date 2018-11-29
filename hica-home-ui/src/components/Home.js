@@ -7,10 +7,12 @@ import {
     CarouselItem,
     CarouselControl,
     CarouselIndicators,
-    CarouselCaption
+    CarouselCaption,
+    Button
 } from 'reactstrap';
 import './Home.css';
 import Profile from './Home.json'
+import { IoIosArrowForward } from "react-icons/io";
 
 const carouselItems = [
     {
@@ -89,6 +91,15 @@ class Home extends Component {
                 >
                     <img src={item.src} alt={item.altText} className='hica-home-carousel-image' onClick={this.onImageClick} />
                     <CarouselCaption captionText={text[item.key].text} captionHeader={text[item.key].caption} />
+                    {this.state.activeIndex !== 0 &&
+                        <Button
+                        className='carousel-button d-none d-md-block'
+                        color='primary'
+                        size='lg'
+                        onClick={this.onImageClick}>
+                        {text[item.key].button} <IoIosArrowForward />
+                        </Button>
+                    }
                 </CarouselItem>
             );
         });

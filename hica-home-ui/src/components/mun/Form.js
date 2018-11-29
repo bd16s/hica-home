@@ -7,7 +7,8 @@ import {
     Form,
     FormGroup,
     Label,
-    Input
+    Input,
+    UncontrolledTooltip
 } from 'reactstrap'
 import SVGInline from 'react-svg-inline'
 import ReactLoading from 'react-loading'
@@ -170,7 +171,14 @@ class ContactForm extends Component {
                                 <ReactLoading type={'spin'} color={Config.color.primary} height={30} width={30} />
                             </div>
                         }
-                        {this.state.captcha.svg && <SVGInline svg={this.state.captcha.svg} onClick={this.onCaptchaClick} style={{ cursor: 'pointer' }} />}
+                        {this.state.captcha.svg &&
+                            <SVGInline svg={this.state.captcha.svg} onClick={this.onCaptchaClick} style={{ cursor: 'pointer' }} id='captcha-svg'/>
+                        }
+                        {this.state.captcha.svg &&
+                            <UncontrolledTooltip placement='right' target='captcha-svg'>
+                            {text.registration.captchaTip}
+                            </UncontrolledTooltip>
+                        }
                     </div>
                 </FormGroup>
                 <FormGroup>
@@ -178,7 +186,7 @@ class ContactForm extends Component {
                     {this.state.formDisabled && <ReactLoading type={'cylon'} color={Config.color.primary} width={58} />}
                 </FormGroup>
             </Form>
-        );
+        )
     }
 }
 

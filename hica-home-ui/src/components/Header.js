@@ -81,7 +81,7 @@ class Header extends Component {
                     </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className='ml-auto' navbar>
+                        <Nav className='ml-auto' navbar style={{fontSize: '20px'}}>
                             <NavItem active={this.state.activePath === '/mun'}>
                                 <NavLink className='clickable' onClick={() => this.navigateTo('/mun')}>{text.mun}</NavLink>
                             </NavItem>

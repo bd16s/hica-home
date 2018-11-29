@@ -18,8 +18,8 @@
 }
 
 .carousel-caption {
-    top: 40vh;
-    bottom: auto;
+    top: auto;
+    bottom: 40vh;
     text-align: left;
 }
 
@@ -36,4 +36,12 @@
     height: 100vh;
     object-fit: cover;
     opacity: 0.6;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 10;
+    margin-left: 15vw;
+    top: 60vh;
+    bottom: auto;
 }
