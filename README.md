@@ -47,7 +47,7 @@ To run server as a daemon process, please install `forever`. Then under `hica-ho
 	sudo forever start bin/www
 
 
-## Roudmap
+## Roadmap
 ##### Stage I
 - QR code and contacts
 - Form validation
